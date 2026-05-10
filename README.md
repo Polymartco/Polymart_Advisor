@@ -4,7 +4,7 @@
   <img src="https://polymart.co/polymartlogo.png" alt="Polymart" width="300">
 </p>
 
-A CLI portfolio management tool for the [Polymart](https://polymart.co) simulated stock exchange. Pulls live data from 132 fictional tickers across 20 sectors, runs technical analysis, builds optimized portfolios, and tracks your positions — all from your terminal.
+A CLI portfolio management tool for the [Polymart](https://polymart.co) simulated stock exchange. Pulls live data from 132 fictional tickers across 20 sectors, runs technical analysis, builds optimized portfolios, and tracks your positions - all from your terminal.
 
 > **All data is entirely fictional.** Polymart is a simulated market that ticks every 5 seconds. This is not financial advice.
 
@@ -17,7 +17,7 @@ A CLI portfolio management tool for the [Polymart](https://polymart.co) simulate
 
 ### Option 1: Download the EXE (Windows)
 
-Grab the latest release from the [Releases](../../releases) page — no Python install needed. Just download `polymart_advisor.exe` and double-click it.
+Grab the latest release from the [Releases](../../releases) page - no Python install needed. Just download `polymart_advisor.exe` and double-click it.
 
 ### Option 2: Run from source
 
@@ -35,11 +35,11 @@ Requires Python 3.8+.
 | Command | Description |
 |---|---|
 | **Market Dashboard** | Market index, fear & greed gauge, top gainers/losers, macro snapshot, recent events |
-| **Stock Screener** | Sort and filter all 132 stocks by change, price, RSI, volume, or streak — with optional sector filtering |
+| **Stock Screener** | Sort and filter all 132 stocks by change, price, RSI, volume, or streak - with optional sector filtering |
 | **Deep Analysis** | Full technical breakdown of any ticker: SMA, EMA, MACD, Bollinger Bands, sparkline chart, multi-factor signal |
 | **Sector Analysis** | Sector rotation heatmap ranked by performance, with drill-down into individual constituents |
 | **Build Portfolio** | Enter a budget and risk profile, get a diversified portfolio with conviction-weighted allocation, stop-losses, and profit targets |
-| **Check Portfolio** | Load your saved portfolio and compare entry prices against live data — shows P&L per position and flags triggered stops/targets |
+| **Check Portfolio** | Load your saved portfolio and compare entry prices against live data - shows P&L per position and flags triggered stops/targets |
 | **Watchlist** | Persistent ticker watchlist with live signals |
 | **Market Events** | Browse flash crashes, booms, FDA approvals, meme frenzies, and other simulation events |
 | **Macro View** | Interest rates, inflation, GDP growth, fear & greed, and crash/boom cooldown timers |
@@ -53,12 +53,12 @@ Requires Python 3.8+.
 
 The advisor computes real indicators from Polymart's price history API:
 
-- **SMA** (20 & 50 period) — trend direction and support/resistance
-- **EMA** (12 period) — faster-reacting trend signal
-- **MACD** — momentum and crossover detection
-- **Bollinger Bands** (20 period, 2σ) — volatility and mean reversion
-- **RSI** — overbought/oversold from the API
-- **52-week range positioning** — where price sits relative to its high and low
+- **SMA** (20 & 50 period) - trend direction and support/resistance
+- **EMA** (12 period) - faster-reacting trend signal
+- **MACD** - momentum and crossover detection
+- **Bollinger Bands** (20 period, 2σ) - volatility and mean reversion
+- **RSI** - overbought/oversold from the API
+- **52-week range positioning** - where price sits relative to its high and low
 
 The multi-factor scoring engine combines RSI, momentum, streak, trend bias, 52-week range, moving averages, and MACD into a single score that maps to **STRONG BUY / BUY / HOLD / SELL / STRONG SELL**.
 
@@ -84,16 +84,16 @@ Allocation is conviction-weighted (higher-scoring picks get more capital) with a
 
 If the app is blocked by Smart App Control or a corporate proxy, you have a few options:
 
-**Quick fix** — disable SSL verification for the session:
+**Quick fix** - disable SSL verification for the session:
 ```
 set POLYMART_NO_VERIFY=1
 python polymart_advisor.py
 ```
 
-**Proper fix** — allow Python through Smart App Control:
+**Proper fix** - allow Python through Smart App Control:
 Settings → Privacy & Security → Windows Security → App & Browser Control → Smart App Control → Off
 
-**Corporate proxy** — point to your CA bundle:
+**Corporate proxy** - point to your CA bundle:
 ```
 set REQUESTS_CA_BUNDLE=C:\path\to\corporate-ca-bundle.crt
 ```
@@ -110,16 +110,16 @@ Make sure you can reach `https://polymart.co/api/v1/getHealth` in your browser. 
 
 This tool uses the [Polymart REST API](https://polymart.co/#/docs/api). All endpoints are unauthenticated GET requests. Key endpoints used:
 
-- `/api/v1/getMarket` — market index and macro overview
-- `/api/v1/getStocks` — all 132 stocks with optional sector filter
-- `/api/v1/getStock?ticker=X` — full detail + price history for a single stock
-- `/api/v1/getSectors` — sector-level aggregates
-- `/api/v1/getTopMovers` — top gainers and losers
-- `/api/v1/getEvents` — simulation events (crashes, booms, etc.)
-- `/api/v1/getLeaderboard` — ranked stock lists by any metric
-- `/api/v1/getMacro` — macroeconomic environment
-- `/api/v1/getHistory` — raw price history (up to 400 data points)
-- `/api/v1/search` — full-text search
+- `/api/v1/getMarket` - market index and macro overview
+- `/api/v1/getStocks` - all 132 stocks with optional sector filter
+- `/api/v1/getStock?ticker=X` - full detail + price history for a single stock
+- `/api/v1/getSectors` - sector-level aggregates
+- `/api/v1/getTopMovers` - top gainers and losers
+- `/api/v1/getEvents` - simulation events (crashes, booms, etc.)
+- `/api/v1/getLeaderboard` - ranked stock lists by any metric
+- `/api/v1/getMacro` - macroeconomic environment
+- `/api/v1/getHistory` - raw price history (up to 400 data points)
+- `/api/v1/search` - full-text search
 
 Full API docs: [polymart.co/llms.txt](https://polymart.co/llms.txt)
 
