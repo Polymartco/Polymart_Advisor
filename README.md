@@ -121,7 +121,7 @@ This tool uses the [Polymart REST API](https://polymart.co/#/docs/api). All endp
 - `/api/v1/getHistory` - raw price history (up to 400 data points)
 - `/api/v1/search` - full-text search
 
-Full API docs: [polymart.co/llms.txt](https://polymart.co/llms.txt)
+Full API docs: [polymart.co/llms.txt](https://polymart.co/#/docs/api)
 
 ---
 
